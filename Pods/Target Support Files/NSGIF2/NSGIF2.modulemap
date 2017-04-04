@@ -1,0 +1,6 @@
+framework module NSGIF2 {
+  umbrella header "NSGIF2-umbrella.h"
+
+  export *
+  module * { export * }
+}
