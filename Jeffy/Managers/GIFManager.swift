@@ -102,11 +102,16 @@ class GIFManager: NSObject {
     }
     
     // Exporting
-    var pendingExport: PHLivePhoto?
-    var pendingURLs: (String, String)?
-    var pendingExportCompletion: ((Bool, Error?) -> ())?
-    var exportTimer: Timer?
+//    var pendingExport: PendingExport?
+//    var exportTimer: Timer?
 }
+
+//struct PendingExport {
+//    var livePhoto: PHLivePhoto?
+//    var urls: (String, String)?
+//    var gif: GIF?
+//    var completion: ((Bool, Error?) -> ())?
+//}
 
 
 // MARK: - Exporting
@@ -114,48 +119,57 @@ extension GIFManager {
     
     // Since the get live photo completion block is called multiple times, we update each time it is called,
     // then only export once its been 3.0 seconds since the last callback
-    
-    func exportTimerFired() {
-        
-        if let livePhoto = pendingExport {
-            
-            guard let urls = pendingURLs else {
-                self.pendingExportCompletion?(false, nil)
-                return
-            }
-            
-            self.pendingExport = nil
-            self.pendingURLs = nil
-            
-            guard let photoURL = URL(string: urls.0), let videoURL = URL(string: urls.1) else {
-                self.pendingExportCompletion?(false, nil)
-                return
-            }
-            
-            PhotosManager.shared.save(livePhoto: livePhoto, photoURL: photoURL, videoURL: videoURL, completion: { (success, error) in
-                DispatchQueue.main.async {
-                    self.pendingExportCompletion?(success, error)
-                }
-            })
-            
-            
-        } else {
-            pendingExportCompletion?(false, nil)
-        }
-    }
+
+//    func exportTimerFired() {
+//        
+//        if let export = pendingExport, let livePhoto = export.livePhoto {
+//            
+//            guard let urls = export.urls else {
+//                export.completion?(false, nil)
+//                return
+//            }
+//            
+//            export.livePhoto = nil
+//            
+//            guard let photoURL = URL(string: urls.0), let videoURL = URL(string: urls.1) else {
+//                export.completion?(false, nil)
+//                return
+//            }
+//            
+//            PhotosManager.shared.save(livePhoto: livePhoto, with: , photoURL: photoURL, videoURL: videoURL, completion: { (success, error) in
+//                DispatchQueue.main.async {
+//                    export.completion?(success, error)
+//                }
+//            })
+//            
+//            
+//        } else {
+//            pendingExportCompletion?(false, nil)
+//        }
+//    }
     
     func exportLivePhoto(for gif: GIF, completion: @escaping (Bool, Error?) -> ()) {
         
         gif.livePhoto { livePhoto, info, urls in
+
+            guard let urls = urls, let livePhoto = livePhoto else { return }
+            guard let photoURL = URL(string: urls.0), let videoURL = URL(string: urls.1) else {
+                completion(false, nil)
+                return
+            }
             
-            self.pendingExport = livePhoto
-            self.pendingURLs = urls
-            self.pendingExportCompletion = completion
+            PhotosManager.shared.save(livePhoto: livePhoto, with: gif.id, photoURL: photoURL, videoURL: videoURL, completion: completion)
             
-            self.exportTimer?.invalidate()
-            self.exportTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self,
-                                                    selector: #selector(self.exportTimerFired),
-                                                    userInfo: nil, repeats: false)
+//            self.pendingExport = PendingExport()
+//            self.pendingExport?.livePhoto = livePhoto
+//            self.pendingExport?.url? = urls
+//            self.pendingExport?.completion = completion
+//            self
+//            
+//            self.exportTimer?.invalidate()
+//            self.exportTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self,
+//                                                    selector: #selector(self.exportTimerFired),
+//                                                    userInfo: nil, repeats: false)
         }
     }
 }

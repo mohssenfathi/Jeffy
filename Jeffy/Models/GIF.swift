@@ -49,15 +49,15 @@ struct GIFAsset: Decodable {
     }
     
     var type: AssetType = .unknown
-//    var height: Int?
-//    var width: Int?
+    var height: Int?
+    var width: Int?
     var url: String?
     
     static func decode(_ json: Any) throws -> GIFAsset {
         return GIFAsset(
             type: .unknown,
-//            height: try json => "height",
-//            width: try json => "width",
+            height: try Int(json => "height"),
+            width: try Int(json => "width"),
             url: try json => "url")
     }
 }

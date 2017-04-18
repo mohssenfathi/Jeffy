@@ -43,7 +43,7 @@ class GIFDataSource: NSObject {
 }
 
 extension GIFDataSource: UICollectionViewDataSource {
-    
+        
     func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return gifs.count }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

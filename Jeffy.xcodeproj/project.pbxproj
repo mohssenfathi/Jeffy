@@ -20,6 +20,15 @@
 		4566B5C81E91303F00D3E357 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4566B5C61E91303F00D3E357 /* Montserrat-Regular.ttf */; };
 		4566B5CA1E9132A000D3E357 /* GIFCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4566B5C91E9132A000D3E357 /* GIFCollectionViewCell.swift */; };
 		4566B5CC1E91349600D3E357 /* GIFDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4566B5CB1E91349600D3E357 /* GIFDataSource.swift */; };
+		45A1CE281EA289F300C84563 /* GIFDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1CE271EA289F300C84563 /* GIFDetailViewController.swift */; };
+		45A1CE2B1EA2A29800C84563 /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1CE2A1EA2A29800C84563 /* SpectrumView.swift */; };
+		45A1CE2D1EA2A33D00C84563 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1CE2C1EA2A33D00C84563 /* ColorPickerViewController.swift */; };
+		45A1CE2F1EA2A76900C84563 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1CE2E1EA2A76900C84563 /* Tools.swift */; };
+		45A1CE3A1EA4F04900C84563 /* LivePhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1CE391EA4F04900C84563 /* LivePhotoDataSource.swift */; };
+		45A1CE3C1EA4F11100C84563 /* LivePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1CE3B1EA4F11100C84563 /* LivePhotoCollectionViewCell.swift */; };
+		45A1CE3F1EA6458A00C84563 /* LivePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A1CE3D1EA6458A00C84563 /* LivePhoto.storyboard */; };
+		45A1CE421EA645B000C84563 /* GIF.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A1CE401EA645B000C84563 /* GIF.storyboard */; };
+		45A1CE441EA645D100C84563 /* LivePhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1CE431EA645D100C84563 /* LivePhotoDetailViewController.swift */; };
 		45E0C1FF1E88526700F978C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E0C1FE1E88526700F978C8 /* AppDelegate.swift */; };
 		45E0C2071E88526700F978C8 /* Jeffy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45E0C2051E88526700F978C8 /* Jeffy.xcdatamodeld */; };
 		45E0C2091E88526700F978C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E0C2081E88526700F978C8 /* Assets.xcassets */; };
@@ -61,6 +70,15 @@
 		4566B5C61E91303F00D3E357 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		4566B5C91E9132A000D3E357 /* GIFCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFCollectionViewCell.swift; sourceTree = "<group>"; };
 		4566B5CB1E91349600D3E357 /* GIFDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFDataSource.swift; sourceTree = "<group>"; };
+		45A1CE271EA289F300C84563 /* GIFDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFDetailViewController.swift; sourceTree = "<group>"; };
+		45A1CE2A1EA2A29800C84563 /* SpectrumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrumView.swift; sourceTree = "<group>"; };
+		45A1CE2C1EA2A33D00C84563 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		45A1CE2E1EA2A76900C84563 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		45A1CE391EA4F04900C84563 /* LivePhotoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhotoDataSource.swift; sourceTree = "<group>"; };
+		45A1CE3B1EA4F11100C84563 /* LivePhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		45A1CE3E1EA6458A00C84563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LivePhoto.storyboard; sourceTree = "<group>"; };
+		45A1CE411EA645B000C84563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GIF.storyboard; sourceTree = "<group>"; };
+		45A1CE431EA645D100C84563 /* LivePhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhotoDetailViewController.swift; sourceTree = "<group>"; };
 		45E0C1FB1E88526700F978C8 /* Jeffy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jeffy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E0C1FE1E88526700F978C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45E0C2061E88526700F978C8 /* Jeffy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jeffy.xcdatamodel; sourceTree = "<group>"; };
@@ -110,6 +128,7 @@
 		455D812B1E9041B000D7406A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				45A1CE2E1EA2A76900C84563 /* Tools.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -118,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				4566B5C91E9132A000D3E357 /* GIFCollectionViewCell.swift */,
+				45A1CE3B1EA4F11100C84563 /* LivePhotoCollectionViewCell.swift */,
 				4566B5C11E909D9600D3E357 /* PageCollectionViewCell.swift */,
 				455D81411E90992000D7406A /* ViewControllerCollectionViewCell.swift */,
 			);
@@ -139,6 +159,14 @@
 				4566B5C61E91303F00D3E357 /* Montserrat-Regular.ttf */,
 			);
 			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		45A1CE291EA2A29800C84563 /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				45A1CE2A1EA2A29800C84563 /* SpectrumView.swift */,
+			);
+			path = ColorPicker;
 			sourceTree = "<group>";
 		};
 		45E0C1F21E88526700F978C8 = {
@@ -194,7 +222,10 @@
 			children = (
 				45E0C22D1E88534B00F978C8 /* MainViewController.swift */,
 				455D813E1E90969200D7406A /* LivePhotoViewController.swift */,
+				45A1CE431EA645D100C84563 /* LivePhotoDetailViewController.swift */,
 				455D813C1E90968300D7406A /* GIFViewController.swift */,
+				45A1CE271EA289F300C84563 /* GIFDetailViewController.swift */,
+				45A1CE2C1EA2A33D00C84563 /* ColorPickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,6 +248,7 @@
 				455D81311E90555000D7406A /* GIF.swift */,
 				455D813A1E90789B00D7406A /* GIFConverter.swift */,
 				4566B5CB1E91349600D3E357 /* GIFDataSource.swift */,
+				45A1CE391EA4F04900C84563 /* LivePhotoDataSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,6 +256,7 @@
 		45E0C2241E8852E600F978C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				45A1CE291EA2A29800C84563 /* ColorPicker */,
 				455D81401E90992000D7406A /* Cells */,
 			);
 			path = Views;
@@ -234,6 +267,8 @@
 			children = (
 				45E0C2271E88533200F978C8 /* LaunchScreen.storyboard */,
 				45E0C2291E88533200F978C8 /* Main.storyboard */,
+				45A1CE3D1EA6458A00C84563 /* LivePhoto.storyboard */,
+				45A1CE401EA645B000C84563 /* GIF.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -350,6 +385,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4566B5C71E91303F00D3E357 /* Montserrat-Bold.ttf in Resources */,
+				45A1CE421EA645B000C84563 /* GIF.storyboard in Resources */,
+				45A1CE3F1EA6458A00C84563 /* LivePhoto.storyboard in Resources */,
 				45E0C22B1E88533200F978C8 /* LaunchScreen.storyboard in Resources */,
 				45E0C2091E88526700F978C8 /* Assets.xcassets in Resources */,
 				4566B5C81E91303F00D3E357 /* Montserrat-Regular.ttf in Resources */,
@@ -465,21 +502,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				45E0C22E1E88534B00F978C8 /* MainViewController.swift in Sources */,
+				45A1CE281EA289F300C84563 /* GIFDetailViewController.swift in Sources */,
 				4566B5C21E909D9600D3E357 /* PageCollectionViewCell.swift in Sources */,
 				45E0C2071E88526700F978C8 /* Jeffy.xcdatamodeld in Sources */,
 				45E0C2331E8853CC00F978C8 /* PhotosManager.swift in Sources */,
+				45A1CE3C1EA4F11100C84563 /* LivePhotoCollectionViewCell.swift in Sources */,
 				455D81271E901D5000D7406A /* QuickTimeMov.swift in Sources */,
 				455D81291E90372100D7406A /* GIFManager.swift in Sources */,
+				45A1CE3A1EA4F04900C84563 /* LivePhotoDataSource.swift in Sources */,
 				455D81421E90992000D7406A /* ViewControllerCollectionViewCell.swift in Sources */,
 				45E0C2351E8853CF00F978C8 /* JeffyAlbum.swift in Sources */,
 				455D81321E90555000D7406A /* GIF.swift in Sources */,
 				45E0C1FF1E88526700F978C8 /* AppDelegate.swift in Sources */,
 				455D813D1E90968300D7406A /* GIFViewController.swift in Sources */,
 				455D813F1E90969200D7406A /* LivePhotoViewController.swift in Sources */,
+				45A1CE2D1EA2A33D00C84563 /* ColorPickerViewController.swift in Sources */,
+				45A1CE2B1EA2A29800C84563 /* SpectrumView.swift in Sources */,
 				455D81261E901D5000D7406A /* JPEG.swift in Sources */,
 				4566B5CA1E9132A000D3E357 /* GIFCollectionViewCell.swift in Sources */,
 				455D813B1E90789B00D7406A /* GIFConverter.swift in Sources */,
+				45A1CE441EA645D100C84563 /* LivePhotoDetailViewController.swift in Sources */,
 				4566B5CC1E91349600D3E357 /* GIFDataSource.swift in Sources */,
+				45A1CE2F1EA2A76900C84563 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +546,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		45A1CE3D1EA6458A00C84563 /* LivePhoto.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A1CE3E1EA6458A00C84563 /* Base */,
+			);
+			name = LivePhoto.storyboard;
+			sourceTree = "<group>";
+		};
+		45A1CE401EA645B000C84563 /* GIF.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A1CE411EA645B000C84563 /* Base */,
+			);
+			name = GIF.storyboard;
+			sourceTree = "<group>";
+		};
 		45E0C2271E88533200F978C8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E144f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="W2T-qK-v8F">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Live Photo Detail View Controller-->
+        <scene sceneID="SV5-DT-raj">
+            <objects>
+                <viewController id="W2T-qK-v8F" customClass="LivePhotoDetailViewController" customModule="Jeffy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iGD-4Y-Yfb"/>
+                        <viewControllerLayoutGuide type="bottom" id="rh7-40-vki"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QnM-IX-hR0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDP-BG-HdI" customClass="GIFImageView" customModule="Gifu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LDP-BG-HdI" firstAttribute="leading" secondItem="QnM-IX-hR0" secondAttribute="leading" id="4x6-bL-V4I"/>
+                            <constraint firstItem="rh7-40-vki" firstAttribute="top" secondItem="LDP-BG-HdI" secondAttribute="bottom" id="QHL-0J-4em"/>
+                            <constraint firstItem="LDP-BG-HdI" firstAttribute="top" secondItem="iGD-4Y-Yfb" secondAttribute="bottom" id="hnJ-gY-kaN"/>
+                            <constraint firstAttribute="trailing" secondItem="LDP-BG-HdI" secondAttribute="trailing" id="kfL-S6-Yyh"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="imageView" destination="LDP-BG-HdI" id="EmI-O9-YWh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1RK-95-s7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="131"/>
+        </scene>
+    </scenes>
+</document>

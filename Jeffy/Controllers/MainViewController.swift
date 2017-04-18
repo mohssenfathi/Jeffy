@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class MainViewController: UIViewController {
 
@@ -14,9 +15,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var contentCollectionView: UICollectionView!
     @IBOutlet weak var underlineLeadingConstraint: NSLayoutConstraint!
     
+    var selectedGIF: GIF?
+    var selectedLivePhotoAsset: PHAsset?
+    
     lazy var gifViewController: GIFViewController? = {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GIFViewController") as? GIFViewController else { return nil }
         vc.title = "GIFs"
+        
         return vc
     }()
     
@@ -25,7 +30,35 @@ class MainViewController: UIViewController {
         vc.title = "Live Photos"
         return vc
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        gifViewController?.didSelect = { gif in
+            self.selectedGIF = gif
+            self.performSegue(withIdentifier: "GIFDetail", sender: self)
+        }
+        
+        livePhotoViewController?.didSelect = { asset in
+            self.selectedLivePhotoAsset = asset
+            self.performSegue(withIdentifier: "LivePhotoDetail", sender: self)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? GIFDetailViewController {
+            vc.gif = selectedGIF
+        }
+        else if let vc = segue.destination as? LivePhotoDetailViewController {
+            vc.asset = selectedLivePhotoAsset
+        }
+    }
 }
 
 // MARK: - UICollectionView

@@ -37,6 +37,8 @@ class GIFCollectionViewCell: UICollectionViewCell {
     var gif: GIF? {
         didSet {
             
+            imageView.image = nil
+            
             if gif?.hasBeenSaved == true {
                 self.saveButton.setImage(#imageLiteral(resourceName: "LivePhotoSuccess"), for: .normal)
                 self.saveButton.setTitle("  Saved", for: .normal)
@@ -71,12 +73,15 @@ class GIFCollectionViewCell: UICollectionViewCell {
         
         GIFManager.shared.exportLivePhoto(for: gif) { (success, error) in
             
-            self.progressBar.indeterminate = false
-            if success {
-               self.successfullySaved()
-            } else {
-                self.failedToSave()
-                print(error?.localizedDescription ?? "")
+            DispatchQueue.main.async {
+                
+                self.progressBar.indeterminate = false
+                if success {
+                    self.successfullySaved()
+                } else {
+                    self.failedToSave()
+                    print(error?.localizedDescription ?? "")
+                }
             }
         }
     }

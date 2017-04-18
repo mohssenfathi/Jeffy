@@ -264,6 +264,9 @@ class PhotosManager: NSObject {
         }
     }
 
+    
+    // Live Photos
+    var savedLivePhotoIdentifiers = [String : PHAsset]()
 }
 
 //extension PHFetchResult where ObjectType is PHAsset {
@@ -342,21 +345,38 @@ extension PhotosManager {
         }
         
     }
-
-    func save(livePhoto: PHLivePhoto, photoURL: URL, videoURL: URL, completion: @escaping (Bool, Error?) -> ()) {
+    
+    func save(livePhoto: PHLivePhoto, with identifier: String, photoURL: URL, videoURL: URL, completion: @escaping (Bool, Error?) -> ()) {
         
-        PHPhotoLibrary.shared().performChanges({
+        
+        let save = {
             
-            let request = PHAssetCreationRequest.forAsset()
-            
-            request.addResource(with: .photo, fileURL: photoURL, options: nil)
-            request.addResource(with: .pairedVideo, fileURL: videoURL, options: nil)
-            
-        }) { (success, error) in
-            // TODO: -
-            //            _ = try? FileManager.default.removeItem(at: url)
-            completion(success, error)
+            PHPhotoLibrary.shared().performChanges({
+                let request = PHAssetCreationRequest.forAsset()
+                request.addResource(with: .photo, fileURL: photoURL, options: nil)
+                request.addResource(with: .pairedVideo, fileURL: videoURL, options: nil)
+            }) { (success, error) in
+                // TODO: -
+                //            _ = try? FileManager.default.removeItem(at: url)
+                if let asset = self.livePhotos.last {
+                    self.savedLivePhotoIdentifiers[identifier] = asset
+                }
+                completion(success, error)
+            }
+
         }
         
+//        if let asset = self.savedLivePhotoIdentifiers[identifier] {
+//
+//            PHPhotoLibrary.shared().performChanges({
+//                PHAssetChangeRequest.deleteAssets([asset] as NSFastEnumeration)
+//            }) { (success, error) in
+//                save()
+//            }
+//            
+//        } else {
+            save()
+//        }
+
     }
 }

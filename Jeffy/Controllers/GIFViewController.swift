@@ -19,6 +19,7 @@ class GIFViewController: UIViewController {
     
     let dataSource = GIFDataSource()
     var currentURLs: (photoURL: URL, videoURL: URL)?
+    var didSelect: ((GIF) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,10 @@ class GIFViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
-        dataSource.keyword = "nature"
+        GIFManager.shared.trending { gifs in
+            self.dataSource.gifs = gifs
+            self.dataSource.update()
+        }
     }
     
     func updateGIF() {
@@ -51,7 +55,6 @@ class GIFViewController: UIViewController {
             }
         }
     }
-
 }
 
 extension GIFViewController: UITextFieldDelegate {
@@ -66,6 +69,15 @@ extension GIFViewController: UITextFieldDelegate {
 extension GIFViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if let asset = dataSource.gifs[indexPath.item].asset(for: .preview) {
+            if let height = asset.height, let width = asset.width {
+                let ratio = CGFloat(height) / CGFloat(width)
+                return CGSize(width: collectionView.frame.width, height: collectionView.frame.width * ratio + 60.0)
+            }
+        }
+        
+        
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.width)
     }
     
@@ -74,4 +86,7 @@ extension GIFViewController: UICollectionViewDelegate, UICollectionViewDelegateF
         cell.gif = dataSource.gifs[indexPath.item]
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelect?(dataSource.gifs[indexPath.item])
+    }
 }
